@@ -218,6 +218,15 @@ public:
      * @return True when the action finishes on this frame, otherwise false
      */
     bool UpdateAction(float deltaTime, KeyboardKey actionKey, const std::string& actionName);
+
+    /**
+     * @brief Play a one-shot action animation using a key name (e.g., "j", "space", "f1")
+     * @param deltaTime Time since last frame in seconds
+     * @param actionKeyName Key name that triggers the action
+     * @param actionName Animation name used for the action
+     * @return True when the action finishes on this frame, otherwise false
+     */
+    bool UpdateAction(float deltaTime, const std::string& actionKeyName, const std::string& actionName);
     
     /**
      * @brief Draw the current sprite frame

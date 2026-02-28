@@ -2,7 +2,7 @@
  * @file SpriteAnimator.cpp
  * @brief Implementation of SpriteAnimator class
  */
-#include <SpriteAnimator.hpp>
+#include <raygine/SpriteAnimator.hpp>
 #include <algorithm>
 #include <cctype>
 
@@ -390,6 +390,14 @@ bool SpriteAnimator::UpdateAction(float deltaTime, KeyboardKey actionKey, const 
     }
 
     return actionCompleted;
+}
+
+bool SpriteAnimator::UpdateAction(float deltaTime, const std::string& actionKeyName, const std::string& actionName) {
+    KeyboardKey actionKey;
+    if (!TryResolveAnimationKey(actionKeyName, actionKey)) {
+        return false;
+    }
+    return UpdateAction(deltaTime, actionKey, actionName);
 }
 
 void SpriteAnimator::NextFrame() {

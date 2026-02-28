@@ -37,5 +37,5 @@ int main()
 }
 
 /*
-g++ *.cpp src/SpriteAnimator.cpp -o prog -I include -L lib -lraylib -lopengl32 -lgdi32 -lwinmm
+g++ teste.cpp src/SpriteAnimator.cpp -o prog -I include -L lib -lraylib -lopengl32 -lgdi32 -lwinmm
 */

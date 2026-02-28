@@ -1,6 +1,6 @@
 #include <iostream>
 #include <raylib.h>
-#include "SpriteAnimator.hpp"
+#include "raygine/SpriteAnimator.hpp"
 
 int main()
 {
@@ -10,7 +10,7 @@ int main()
     SpriteAnimator player("resources/image.png", 250, 256);
     
     player.AddAnimation("p", 0, 4, 0.1f, true);
-    player.AddAnimation("attack", 2, 6, 0.07f, false);
+    player.AddAnimation("attack", 1, 6, 0.07f, false);
 
     player.AddAnimation("up", 3, 4, 0.1f, true);
     player.AddAnimation("left", 1, 4, 0.1f, true);
@@ -30,7 +30,7 @@ int main()
     while (!WindowShouldClose())
     {
         float deltaTime = GetFrameTime();
-        bool attackFinished = player.UpdateAction(deltaTime, KEY_SPACE, "attack");
+        bool attackFinished = player.UpdateAction(deltaTime, "j", "attack");
         player.Update(deltaTime);
         if (attackFinished)
         {
